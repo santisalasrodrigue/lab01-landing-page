@@ -1,0 +1,333 @@
+/* ========================
+   LAYOUT — Navbar, Hero, Footer
+   Jungle Cafe — ISW-521
+======================== */
+
+/* ---- NAVBAR — FLEXBOX ---- */
+.site-header {
+  position:         sticky;
+  top:              0;
+  z-index:          100;
+  background-color: var(--bg);
+  border-bottom:    1px solid var(--border);
+  transition:       background-color var(--transition);
+}
+
+.navbar {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  max-width:       1100px;
+  margin:          0 auto;
+  padding:         1rem 2rem;
+  gap:             1rem;
+  animation:       fadeIn 0.6s ease both;
+}
+
+/* Logo */
+.logo {
+  display:     flex;
+  align-items: center;
+  gap:         0.6rem;
+  animation:   popIn 0.6s ease both 0.1s;
+}
+
+.logo-img {
+  height:        44px;
+  width:         auto;
+  border-radius: 0;
+  display:       block;
+  transition:    transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: rotate(-4deg) scale(1.08);
+}
+
+.logo-texto {
+  font-family:    var(--font-display);
+  font-size:      1.6rem;
+  font-weight:    bold;
+  color:          var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.logo-texto em,
+.logo em {
+  color:      var(--gold);
+  font-style: italic;
+}
+
+/* Nav links */
+.nav-links {
+  display:    flex;
+  list-style: none;
+  gap:        2rem;
+  animation:  fadeIn 0.6s ease both 0.3s;
+}
+
+.nav-links a {
+  position:       relative;
+  color:          var(--text);
+  font-size:      0.95rem;
+  font-weight:    600;
+  letter-spacing: 0.03em;
+  padding-bottom: 4px;
+  transition:     color var(--transition);
+}
+
+.nav-links a::after {
+  content:    '';
+  position:   absolute;
+  bottom:     0;
+  left:       0;
+  width:      0;
+  height:     2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Controles agrupados: tamaño de letra, dark mode, hamburguesa */
+.navbar-controls {
+  display:     flex;
+  align-items: center;
+  gap:         0.5rem;
+}
+
+/* Controles de tamaño de letra */
+.font-controls {
+  display: flex;
+  gap:     0.4rem;
+}
+
+.font-btn {
+  background:    var(--bg-secondary);
+  border:        1px solid var(--border);
+  border-radius: 8px;
+  padding:       0.35rem 0.6rem;
+  font-size:     0.85rem;
+  font-weight:   700;
+  color:         var(--text);
+  cursor:        pointer;
+  transition:    background-color var(--transition), transform 0.2s ease;
+}
+
+.font-btn:hover {
+  background-color: var(--border);
+  transform:        scale(1.08);
+}
+
+.font-btn:active {
+  transform: scale(0.95);
+}
+
+/* Dark toggle */
+.dark-toggle {
+  background:    var(--bg-secondary);
+  border:        1px solid var(--border);
+  border-radius: 50px;
+  padding:       0.4rem 0.8rem;
+  font-size:     1.1rem;
+  cursor:        pointer;
+  transition:    background-color var(--transition), transform 0.2s ease;
+}
+
+.dark-toggle:hover {
+  background-color: var(--border);
+  transform:        scale(1.1) rotate(10deg);
+}
+
+/* Hamburger */
+.hamburger {
+  display:        none;
+  flex-direction: column;
+  gap:            5px;
+  background:     none;
+  border:         none;
+  cursor:         pointer;
+  padding:        6px;
+  flex-shrink:    0;
+}
+
+.hamburger span {
+  display:       block;
+  width:         24px;
+  height:        2px;
+  background:    var(--text);
+  border-radius: 2px;
+  transition:    transform var(--transition), opacity var(--transition);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-links.mobile-open {
+  display:          flex;
+  flex-direction:   column;
+  position:         absolute;
+  top:              100%;
+  left:             0;
+  right:            0;
+  background-color: var(--bg);
+  border-bottom:    1px solid var(--border);
+  padding:          1.2rem 2rem;
+  gap:              1.2rem;
+  z-index:          99;
+  animation:        fadeUp 0.25s ease both;
+}
+
+/* ---- HERO ---- */
+.hero {
+  background-color:    var(--accent);
+  background-image:    linear-gradient(rgba(10, 25, 10, 0.65), rgba(10, 25, 10, 0.65)),
+                       url('../assets/images/hero/hero-bg.avif');
+  background-size:     cover;
+  background-position: center;
+  background-repeat:   no-repeat;
+  padding:             7rem 2rem;
+  text-align:          center;
+  border-bottom:       1px solid var(--border);
+  position:            relative;
+  overflow:            hidden;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin:    0 auto;
+}
+
+.hero-eyebrow {
+  font-size:      0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color:          var(--gold);
+  margin-bottom:  1rem;
+  display:        block;
+  animation:      fadeUp 0.7s ease both 0.1s;
+}
+
+.hero h1 {
+  font-family:   var(--font-display);
+  font-size:     clamp(2.2rem, 5vw, 3.8rem);
+  line-height:   1.15;
+  color:         #ffffff;
+  margin-bottom: 1.2rem;
+  animation:     fadeUp 0.7s ease both 0.25s;
+}
+
+.hero p {
+  font-size:     1.1rem;
+  color:         rgba(255, 255, 255, 0.82);
+  margin-bottom: 2rem;
+  font-weight:   300;
+  animation:     fadeUp 0.7s ease both 0.4s;
+}
+
+.btn-primary {
+  position:         relative;
+  display:          inline-block;
+  background-color: var(--gold);
+  color:            #1a2a14;
+  padding:          0.85rem 2rem;
+  border-radius:    50px;
+  font-weight:      700;
+  font-size:        0.95rem;
+  letter-spacing:   0.05em;
+  border:           none;
+  cursor:           pointer;
+  overflow:         hidden;
+  animation:        fadeUp 0.7s ease both 0.55s, pulse 3s ease-in-out 1.2s infinite;
+  transition:       background-color var(--transition), transform var(--transition);
+}
+
+.btn-primary::after {
+  content:    '';
+  position:   absolute;
+  inset:      0;
+  background: rgba(255, 255, 255, 0.15);
+  transform:  translateX(-100%);
+  transition: transform 0.35s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-hover);
+  color:            #1a2a14;
+  transform:        translateY(-2px);
+}
+
+.btn-primary:hover::after {
+  transform: translateX(0);
+}
+
+/* ---- FOOTER — FLEXBOX ---- */
+.site-footer {
+  background-color: var(--accent);
+  color:            #fff;
+  text-align:       center;
+  padding:          2rem;
+  display:          flex;
+  flex-direction:   column;
+  gap:              0.8rem;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  opacity:   0.9;
+}
+
+.site-footer nav {
+  display:         flex;
+  justify-content: center;
+  gap:             1.5rem;
+}
+
+.site-footer a {
+  display:     inline-block;
+  color:       #fff;
+  font-weight: 600;
+  font-size:   0.9rem;
+  opacity:     0.85;
+  transition:  opacity var(--transition), transform 0.2s ease;
+}
+
+.site-footer a:hover {
+  opacity:   1;
+  transform: translateY(-2px);
+}
+
+/* ---- SCROLL REVEAL ---- */
+.reveal {
+  opacity:    0;
+  transform:  translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.reveal--left {
+  transform: translateX(-30px);
+}
+
+.reveal.reveal--right {
+  transform: translateX(30px);
+}
+
+.reveal.visible {
+  opacity:   1;
+  transform: translate(0);
+}
