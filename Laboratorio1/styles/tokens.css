@@ -1,0 +1,42 @@
+/* ========================
+   VARIABLES Y TOKENS
+======================== */
+:root {
+  /* Colores */
+  --bg:           #f2f7f0;
+  --bg-secondary: #e4ede0;
+  --text:         #1a2a14;
+  --text-muted:   #4a6040;
+  --accent:       #2d5a27;
+  --accent-hover: #1e3e1a;
+  --gold:         #c9973a;
+  --gold-hover:   #a87a28;
+  --card-bg:      #ffffff;
+  --border:       #b8d4b0;
+  --shadow:       rgba(45, 90, 39, 0.13);
+
+  /* Tipografía */
+  --font-display: 'Georgia', serif;
+  --font-body:    'Trebuchet MS', sans-serif;
+
+  /* Utilidades */
+  --radius:     12px;
+  --transition: 0.3s ease;
+}
+
+/* ========================
+   DARK MODE
+======================== */
+body.dark {
+  --bg:           #0f1a0e;
+  --bg-secondary: #162214;
+  --text:         #e0f0d8;
+  --text-muted:   #88b07a;
+  --accent:       #4a9a3e;
+  --accent-hover: #5cb84e;
+  --gold:         #e8b85a;
+  --gold-hover:   #f0cc7a;
+  --card-bg:      #1a2a18;
+  --border:       #2a4a24;
+  --shadow:       rgba(0, 0, 0, 0.4);
+}
