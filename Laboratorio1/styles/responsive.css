@@ -1,0 +1,78 @@
+
+/* BREAKPOINT 1: Tablet (768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nosotros-content {
+    flex-direction: column;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:    auto;
+  }
+
+  .galeria-item--grande,
+  .galeria-item--ancha {
+    grid-column: 1 / -1;
+  }
+
+  .galeria-item {
+    height: 220px;
+  }
+
+  .contacto-contenido {
+    flex-direction: column;
+  }
+}
+
+/* BREAKPOINT 2: Móvil (480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-item {
+    height:      200px;
+    grid-column: 1 !important;
+    grid-row:    auto !important;
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+  }
+
+  .productos,
+  .galeria,
+  .nosotros,
+  .contacto {
+    padding: 3rem 1rem;
+  }
+
+  .menu-tabs {
+    gap: 0.4rem;
+  }
+
+  .tab-btn {
+    padding:   0.45rem 1rem;
+    font-size: 0.75rem;
+  }
+}
