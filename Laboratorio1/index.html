@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Jungle Cafe — Cafetería de especialidad en Muelle San Carlos, Costa Rica. Café de origen, ambiente natural y fauna silvestre única.">
+  <title>Jungle Cafe | Muelle San Carlos</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="#inicio" class="logo" aria-label="Jungle Cafe inicio">
+        <img src="assets/images/logo/logo.png" alt="Logo Jungle Cafe" class="logo-img">
+        <span class="logo-texto">Jungle <em>Cafe</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#productos">Menú</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <!-- Controles: tamaño de letra, dark mode y hamburguesa -->
+      <div class="navbar-controls">
+        <div class="font-controls" role="group" aria-label="Controles de tamaño de letra">
+          <button class="font-btn" id="fontDecrease" aria-label="Disminuir tamaño de letra">A−</button>
+          <button class="font-btn" id="fontIncrease" aria-label="Aumentar tamaño de letra">A+</button>
+        </div>
+
+        <button class="dark-toggle" id="darkToggle" aria-label="Activar modo oscuro" aria-pressed="false">🌙</button>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Muelle San Carlos, Costa Rica</p>
+        <h1 id="hero-title">No somos solo<br>una cafetería.</h1>
+        <p>Somos una experiencia de tranquilidad y café de especialidad, rodeados de selva tropical y fauna silvestre.
+        </p>
+        <a href="#productos" class="btn-primary">Ver nuestro menú</a>
+      </div>
+    </section>
+
+    <!-- ===== MENÚ ===== -->
+    <section class="productos" id="productos" aria-labelledby="productos-title">
+      <h2 id="productos-title">Nuestro Menú</h2>
+
+      <div class="menu-tabs" role="tablist" aria-label="Categorías del menú">
+        <button class="tab-btn tab-btn--active" role="tab" aria-selected="true" aria-controls="tab-cafes" id="btn-cafes"
+          data-tab="cafes">Cafés</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-frios" id="btn-frios"
+          data-tab="frios">Fríos</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-bebidas" id="btn-bebidas"
+          data-tab="bebidas">Bebidas</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-comidas" id="btn-comidas"
+          data-tab="comidas">Comidas</button>
+      </div>
+
+      <!-- Cafés -->
+      <div class="tab-panel" id="tab-cafes" role="tabpanel" aria-labelledby="btn-cafes">
+        <div class="productos-grid">
+          <article class="card">
+            <img src="assets/images/menu/americano.avif"
+              alt="Taza de café americano negro recién servido en Jungle Cafe">
+            <h3>Americano</h3>
+            <p>Suave y limpio, resalta las notas frutales del café costarricense. Tamaño pequeño y grande.</p>
+            <span class="precio">Desde ₡1.200</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/capuccino.avif" alt="Latte con espuma cremosa en taza de cerámica artesanal">
+            <h3>Latte & Capuccino</h3>
+            <p>Espresso de especialidad con leche vaporizada. Textura sedosa y sabor equilibrado.</p>
+            <span class="precio">Desde ₡1.700</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/espresso.avif" alt="Shot de espresso doble concentrado en taza pequeña">
+            <h3>Espresso & Moka</h3>
+            <p>Concentrado e intenso. La esencia pura del café. Disponible sencillo o doble.</p>
+            <span class="precio">Desde ₡1.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/nutelatte.avif" alt="Nutelatte con crema de avellana y espresso">
+            <h3>Nutelatte & Flat White</h3>
+            <p>Nuestra firma: espresso con avellana y crema vaporizada. El favorito de nuestros clientes.</p>
+            <span class="precio">Desde ₡2.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/chemex.avif"
+              alt="Preparación de café con método Chemex, agua siendo vertida sobre café molido">
+            <h3>Métodos de Preparación</h3>
+            <p>Chemex, V60, Vandola y Prensa Francesa. Para quienes aprecian el ritual del café.</p>
+            <span class="precio">Desde ₡2.800</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/chocolate.avif" alt="Taza de chocolate caliente con espuma en Jungle Cafe">
+            <h3>Chocolate</h3>
+            <p>Caliente, frío u Oreo. Para quienes prefieren algo diferente al café pero igual de especial.</p>
+            <span class="precio">Desde ₡2.200</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Fríos -->
+      <div class="tab-panel tab-panel--hidden" id="tab-frios" role="tabpanel" aria-labelledby="btn-frios">
+        <div class="productos-grid">
+          <article class="card">
+            <img src="assets/images/menu/frappuccino.avif" alt="Frappuccino helado con crema batida en vaso alto">
+            <h3>Frappuccino</h3>
+            <p>Café helado, cremoso y refrescante. El clásico perfecto para el calor de San Carlos.</p>
+            <span class="precio">₡2.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/iced-oreo.avif"
+              alt="Frappuccino de Oreo con galletas trituradas y crema batida">
+            <h3>Iced Oreo Frappuccino</h3>
+            <p>Café frío con galleta Oreo triturada y crema. Una combinación irresistible.</p>
+            <span class="precio">₡2.600</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/iced-latte.avif"
+              alt="Iced latte con espresso sobre hielo y leche fría en vaso">
+            <h3>Iced Latte & Americano</h3>
+            <p>Espresso sobre hielo con leche fría. Elegante, sencillo y refrescante.</p>
+            <span class="precio">Desde ₡1.800</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/frozen-moka.avif"
+              alt="Frozen Moka con chocolate y café helado en vaso con crema">
+            <h3>Frozen Moka & Nutella</h3>
+            <p>Nuestros sabores especiales en versión helada. Intensos, cremosos y adictivos.</p>
+            <span class="precio">₡2.600</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/coldbrew.avif" alt="Cold brew en vaso con hielo, oscuro y concentrado">
+            <h3>Cold Brew</h3>
+            <p>Extraído en frío durante horas. Suave, concentrado y sin acidez. Café en su estado más puro.</p>
+            <span class="precio">₡1.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/leche-dorada.avif" alt="Leche dorada con cúrcuma y especias en taza artesanal">
+            <h3>Leche Dorada</h3>
+            <p>Leche con cúrcuma y especias tropicales. Reconfortante y diferente a todo lo que conocés.</p>
+            <span class="precio">₡2.000</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Bebidas -->
+      <div class="tab-panel tab-panel--hidden" id="tab-bebidas" role="tabpanel" aria-labelledby="btn-bebidas">
+        <div class="productos-grid">
+          <article class="card">
+            <img src="assets/images/menu/jugos.avif"
+              alt="Jugo natural de frutas tropicales recién preparado en Jungle Cafe">
+            <h3>Jugos Naturales</h3>
+            <p>Piña, limón con hierbabuena, mango, maracuyá, fresa, cas y guanábana. Frescos y sin aditivos.</p>
+            <span class="precio">₡2.000</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/infusiones.avif"
+              alt="Taza de té de manzanilla con hierbas naturales recién preparado">
+            <h3>Infusiones</h3>
+            <p>Manzanilla, té negro y té verde. Tranquilidad en cada sorbo, perfectas para desconectarse.</p>
+            <span class="precio">₡1.300</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Comidas -->
+      <div class="tab-panel tab-panel--hidden" id="tab-comidas" role="tabpanel" aria-labelledby="btn-comidas">
+        <div class="productos-grid">
+          <article class="card">
+            <img src="assets/images/menu/sandwich.avif" alt="Sandwich de pollo con vegetales frescos en pan artesanal">
+            <h3>Sandwiches</h3>
+            <p>Pollo, Mano de Piedra y Pizzero. Elaborados con ingredientes frescos cada día.</p>
+            <span class="precio">Desde ₡2.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/hamburguesa.avif"
+              alt="Hamburguesa de la casa con salsas especiales y acompañamiento">
+            <h3>Hamburguesas</h3>
+            <p>De la Casa o Butifarra (cerdo, pollo o res). Salsas a elección: chipotle, BBQ, ranch, mostaza/miel.</p>
+            <span class="precio">Desde ₡3.500</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/papas.avif" alt="Papas supremas con pollo y salsas especiales en Jungle Cafe">
+            <h3>Papas & Nachos</h3>
+            <p>Papas supremas o nachos con pollo o res. El acompañamiento perfecto para cualquier bebida.</p>
+            <span class="precio">Desde ₡3.900</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/tacos.avif" alt="Tacos con carne y vegetales frescos en tortilla artesanal">
+            <h3>Tacos & Empanadas</h3>
+            <p>Tacos y empanadas de pollo, carne o pinto con queso y plátano. Sabor costarricense auténtico.</p>
+            <span class="precio">Desde ₡1.200</span>
+          </article>
+          <article class="card">
+            <img src="assets/images/menu/batata.avif" alt="Batata frita dorada y crujiente con sal marina">
+            <h3>Batata & Repostería</h3>
+            <p>Batata frita como opción diferente, más repostería de temporada que varía según la época.</p>
+            <span class="precio">Desde ₡3.000</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="nosotros" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="nosotros-content">
+        <div class="nosotros-texto">
+          <h2 id="nosotros-title">¿Quiénes somos?</h2>
+          <p>Jungle Cafe nació en Muelle San Carlos con una sola convicción: tomar un buen café debe ser una experiencia
+            completa. Estamos ubicados a orillas del río, costado norte del Puente Las Iguanas, rodeados de vegetación
+            tropical y con la fauna silvestre como vecina permanente.</p>
+          <p>Ofrecemos café de especialidad preparado con métodos artesanales — Chemex, V60, Prensa Francesa —
+            acompañado de comida fresca y auténtica. Aquí el perezoso se cuelga sobre los árboles y la iguana te saluda
+            desde el río.</p>
+          <p>No somos solo una cafetería. <strong>Somos una experiencia de tranquilidad y café de especialidad.</strong>
+          </p>
+        </div>
+        <div class="nosotros-imagen">
+          <img src="assets/images/gallery/terraza.avif"
+            alt="Terraza del Jungle Cafe con techo de palma, mesas de madera y vegetación tropical alrededor">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="galeria" id="galeria" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">Una experiencia visual</h2>
+      <div class="galeria-grid">
+        <figure class="galeria-item galeria-item--grande">
+          <img src="assets/images/gallery/tucan.avif" alt="Tucán colgado en árbol tropical cerca del Jungle Cafe"
+            loading="lazy">
+          <figcaption class="galeria-caption">Nuestros vecinos</figcaption>
+        </figure>
+        <figure class="galeria-item">
+          <img src="assets/images/gallery/cafe-libro.avif" alt="Espacio para disfrutar de un café mientras lees"
+            loading="lazy">
+          <figcaption class="galeria-caption">Café de especialidad</figcaption>
+        </figure>
+        <figure class="galeria-item">
+          <img src="assets/images/gallery/pasarela.avif"
+            alt="Pasarela sobre el río en el área natural de nuestra cafetería" loading="lazy">
+          <figcaption class="galeria-caption">Pasarela metálica</figcaption>
+        </figure>
+        <figure class="galeria-item galeria-item--ancha">
+          <img src="assets/images/gallery/interior.avif"
+            alt="Interior del Jungle Cafe con mesas de madera y vegetación natural alrededor" loading="lazy">
+          <figcaption class="galeria-caption">El ambiente</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contacto" id="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Encuéntranos</h2>
+      <div class="contacto-contenido">
+
+        <div class="contacto-info">
+          <h3 class="contacto-subtitulo">Información de contacto</h3>
+          <ul class="contacto-lista" aria-label="Datos de contacto">
+            <li class="contacto-item">
+              <span class="contacto-icono" aria-hidden="true">📍</span>
+              <span>Costado Norte del Puente Las Iguanas,<br>Muelle San Carlos, Costa Rica</span>
+            </li>
+            <li class="contacto-item">
+              <span class="contacto-icono" aria-hidden="true">📞</span>
+              <a href="https://wa.me/50683311441" target="_blank" rel="noopener noreferrer">8331-1441</a>
+            </li>
+            <li class="contacto-item">
+              <span class="contacto-icono" aria-hidden="true">✉️</span>
+              <a href="mailto:junglepcr@gmail.com">junglepcr@gmail.com</a>
+            </li>
+            <li class="contacto-item">
+              <span class="contacto-icono" aria-hidden="true">📸</span>
+              <a href="https://instagram.com/jungle_cafecr" target="_blank" rel="noopener noreferrer">@jungle_cafecr</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mapa-wrapper">
+          <iframe title="Ubicación de Jungle Cafe en Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.3408852288962!2d-84.46437069999999!3d10.4737706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0710059aad18f%3A0x8966ffc01546923e!2sJungle%20Cafe!5e0!3m2!1ses-419!2scr!4v1780362891026!5m2!1ses-419!2scr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Jungle Cafe · Muelle San Carlos, Costa Rica</p>
+    <nav aria-label="Redes sociales y  contacto">
+      <a href="https://instagram.com/jungle_cafecr" target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram de Jungle Cafe">Instagram</a>
+      <a href="https://wa.me/50683311441" target="_blank" rel="noopener noreferrer"
+        aria-label="WhatsApp de Jungle Cafe">8331-1441</a>
+      <a href="mailto:junglepcr@gmail.com" aria-label="Enviar correo a Jungle Cafe">Correo</a>
+    </nav>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/scroll-effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
